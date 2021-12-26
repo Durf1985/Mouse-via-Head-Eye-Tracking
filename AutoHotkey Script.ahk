@@ -7,17 +7,22 @@ SetCapsLockState, AlwaysOff
 
 
 
-~CapsLock::
+CapsLock::
 Send {F11 down}{F11 up}
 KeyWait CapsLock
-Click
 Send {F11 down}{F11 up}
 return
 
-RCtrl::RButton
+~CapsLock & d::RButton
 return
 
-~CapsLock & LShift:: MButton
+~CapsLock & a:: MButton
+return
+
+~CapsLock & w::
+Send {LButton Down}
+KeyWait w
+Send {LButton Up}
 return
 
 
