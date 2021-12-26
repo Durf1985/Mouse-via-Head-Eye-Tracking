@@ -1,67 +1,69 @@
 # Mouse-via-Head-Eye-Tracking
-Управление мышкой с помощью отслеживания головы и глаз.
-Есть 2 режима работы:
-1. С отслеживанием движений глаз и головы (Приблизительно 350-400 долларов, веб-камера + Tobii Eye Tracker 5 https://gaming.tobii.com/product/eye-tracker-5/ )
-2. Отслеживание только головы ( приблизительно 25 долларов на покупку веб-камеры). Этой веб-камеры мне хватило https://www.a4tech.com/product.aspx?id=236
+Mouse control using head and eye tracking.
 
-Кому это может пригодиться?
-1. Людям, которые не могут руками набирать текст и пользоваться ПК ( нет рук, или парализованы, или ваш вариант). Основное требование, чтобы человек мог хоть чем-то нажать кнопку (хоть ногами, хоть зубами) и мог контролировать движения своей головы (человеку с Паркинсоном... увы).
-2. Людям, которые набирают много текста за стационарным ПК и при этом не любят отрывать руку от клавиатуры и тянуться за мышкой, чтобы исправить опечатку в соседнем абзаце. Может на ноутбуках тачпады это норма, но для стационарных ПК их не завезли. Изначально я создавал это для себя и под свои нужды, поэтому допускаю:
+I have attached binary files (.exe), if you are afraid of viruses, you can find the official sites by the names and download from there, or follow the links. In this case, I posted them here personally for myself, if an update is suddenly released and the script stops working, then I need a fully functioning assembly. 
 
--скрипт может работать не всегда
-
--может работать не корректно
-
--может зависнуть на ровном месте.
-
-Если думать об этом, как о готовом продукте, то это лишь концепт и даже не альфа-версия. Надеюсь, когда-нибудь подобная возможность будет нативной для ОС. Меня больше удивляет, что до сих пор никто не пробовал довести даже до такого сырого состояния, про нормальные реализации я вообще молчу. Как ключи от дома на самом видном месте, которые никто не может найти.
-
-Демонстрация работы https://youtu.be/hCLEpaX12ag
-
-Установка:
-1. Инсталлировать  eViacam. Отсюда или с сайта разработчика. https://www.fosshub.com/Enable-Viacam.html
-2. Установить среду исполнения скриптов, AutoHotkey_1.1.33.10_setup. https://www.autohotkey.com
-3. Добавить скрипт AutoHotkey Script.ahk в исключения антивируса и защитника Windows. 
-4. Запустить eViacam и пройти калибровку чувствительности и мертвых зон
-5. В приложении eViacam зайти в настройки веб-камеры !!!!и вырубить "компенсацию низкой освещенности" и Выдержку!!!!, для повышения частоты кадров (необходимо делать при каждом запуске, потому что драйвер стандартный от Windows и не запоминает последние значения). Проверить количество кадров под изображением с камеры, у меня 30 кадров/с при выдержке 5 или 6.
-6.  В настройках eViacam отключить все горячие клавиши, кроме "Включить eViacam", назначить для нее клавишу F11 (может она конфликтует в каких-то приложениях, но за пол года не встретил ни одного)
-7. Отключить все функции, которые находятся в настройках профиля (вкладки: Рабочая область, Клик)
-7.  Запустить скрипт AutoHotkey Script.ahk  с правами администратора (можно и с обычными, но экранная клавиатура Windows 10 работать не будет, а разбираться мне откровенно лень и ума не хватит, возможны и другие конфликты, но я не тестировал)
-В идеале нужна обертка, которая будет выполнять все выше перечисленное по нажатию на 1 иконку. 
-
-Основная проблема eViacam в том, что в программе нет простого способа, выполнить следующее:
-- навести курсор куда надо
-- нажать левую кнопку мышки, когда надо
-- выключить отслеживание, чтобы курсор прекратил скакать по экрану за любым вашим движением. 
-Эти задачи решает скрипт. 
+There are 2 modes of operation:
+1. With tracking of eye and head movements (Approximately 350-400 dollars, webcam + Tobii Eye Tracker 5 https://gaming.tobii.com/product/eye-tracker-5 / )
+2. Tracking only the head (approximately $ 25 for the purchase of a webcam). This webcam was enough for me https://www.a4tech.com/product.aspx?id=236
 
 
-Сценарии прописанные в скрипте.
+Who can use it?
 
-Перемещение мышки и нажатие левой кнопки мышки:
-1. зажав CapsLock вы включите захват движений головы через веб-камеру, движения вашей головы будут управлять курсором. 
-2. движения головы будут отслеживаться пока вы держите CapsLock нажатым.
-3. отпустив CapsLock будет сделан "левый клик мышки" и прекратится отслеживание головы. 
-4. быстрое двойное нажатие = двойному клику на классической мышке
-При желании можно выделить еще 1 кнопку на клавиатуре и сделать просто движение мышки без нажатия кнопки, но Caps тем и славится, что чаще всего бесполезен и он один такой на клавиатуре.
+1. People who cannot type text with their hands and use a PC (no hands, or paralyzed)
 
-Нажатие средней кнопки мышки:
-1. Зажать CapsLock
-2. Не отпуская CapsLock, нажать и отпустить Левый Shift
-3. Пока не отпустите CapsLock можно нажимать несколько раз и перемещать мышку (например для скроллинга текста) 
-4. Отжать CapsLock выключится трекинг головы и будет произведен щелчок левой кнопки мышки. 
-Рекомендую попробовать вместо правой кнопки. 
+2. People who type a lot of text at a stationary PC and at the same time do not like to take their hand off the keyboard and reach for the mouse to correct a typo in the next paragraph. Maybe on laptops, touchpads are the norm, but for stationary PCs, with an arrangement like on a laptop, they are not released. 
 
-Нажатие правой кнопки мышки:
-Нажать на Правый Ctrl.
+Initially, I created it for myself and for my needs, so I admit:
 
-Данный скрипт полностью резервирует под себя CapsLock и RightCtrl. Скрипт можно подгонять под конкретные нужды и предпочтения. Но самое паршивое из того что может случиться, это если мелкомягкие (Microsoft) изменят способ работы с экранной клавиатурой. Иногда хочется им перетянуть книгой по затылку - "работает хреновина, не трогай". 
 
-Это дешевая реализация. Ее основной недостаток, что на большой диагонали экрана, нужна большая чувствительность курсора, но при большой чувствительности курсора будет падать точность (голова ни разу не стабильный в пространстве орган и совершает кучу движений, которые вообще не замечаешь, пока не включишь отслеживание).
-Для решения этой проблемы  я использую дополнительно Tobii Eye Tracker5 и его функцию "Переместить курсор мыши туда, куда вы смотрите по нажатию кнопки". У меня это кнопка RightAlt (Alt Gr). Проблема данного устройства в том, что точность отслеживания взгляда низкая и перемещает он курсор "в область куда смотришь".
-Мой скрипт позволяет обходить это ограничение. Совместное использование компенсирует недостатки
+-the script may not always work
 
-В сумме выйдет приблизительно в районе 350-400 долларов за все. Можно сказать что дорого, но специализированное устройство для тех же людей с ограниченными возможностями  от Tobii стоит в районе 2000-3000 тысяч долларов и оно полностью рассчитано на управление взглядом, для полностью парализованных. Данный комплекс можно улучшить с помощью голосового управления, но это уже не ко мне вопрос.
+-may not work correctly
+
+- it can hang out of the blue.
+
+And you will have to deal with these problems yourself.
+
+Demonstration of the work https://youtu.be/hCLEpaX12ag
+At the very beginning, you may see problems with typing, especially when switching the input language.
+
+Installation:
+1. Install eViacam. From here or from the developer's website. https://www.fosshub.com/Enable-Viacam.html
+2. Install the script execution environment, AutoHotkey_1.1.33.10_setup. https://www.autohotkey.com
+3. Add the AutoHotkey Script.ahk script to the antivirus and Windows Defender exceptions. 
+4. Launch eViacam and calibrate sensitivity and dead zones
+5. In the eViacam application, go to the webcam settings !!!and turn off the "low light compensation" and Shutter speed!!!, to increase the frame rate (it must be done at each startup, because the driver is standard from Windows and does not remember the latest values). Check the number of frames under the image from the camera, I have 30 fps at a shutter speed of 5 or 6.
+6. In the eViacam settings, disable all hotkeys except "Turn on eViacam", assign the F11 key to it (maybe it conflicts in some applications, but I haven't met any in half a year)
+
+7. Disable all functions that are in the profile settings (tabs: Workspace, Click)
+8. Run the AutoHotkey Script.ahk script with administrator rights 
+
+Initially, the eViacam program was developed for completely paralyzed people, and therefore the management is not designed for other scenarios.
+
+The script I wrote is a crutch for the program and extends the functionality.
+
+Moving the mouse and pressing the left mouse button:
+1. By holding CapsLock, you will enable the capture of head movements through the webcam, the movements of your head will control the cursor. 
+2. Head movements will be tracked while you keep the CapsLock pressed.
+3. Releasing the CapsLock, a "left mouse click" will be made and head tracking will stop. 
+4. Quick double click = double click on the classic mouse
+It is possible to adjust the movement of the mouse without pressing, but you either need to reserve 1 more button on the keyboard, or make a combination of buttons. See below scenario
+
+Pressing the middle mouse button:
+1. Hold CapsLock
+2. Without releasing the CapsLock, press and release the Left Shift
+3. Until you release the CapsLock, you can press several times and move the mouse (for example, to scroll text) 
+4. Press CapsLock the tracking of the head will turn off and the left mouse button will be clicked. 
+
+
+Pressing Right mouse button:
+Press Right Ctr
+
+This is a cheap implementation. Its main drawback is that on a large diagonal of the screen, you need a high sensitivity of the cursor, but with a high sensitivity of the cursor, the accuracy will drop
+
+To solve this problem, I additionally use Tobii Eye Tracker5 and its function "Move the mouse cursor to where you are looking at the click of a button". I have this RightAlt (Alt Gr) button.
+Together, they compensate for each other's shortcomings, i.e. the low accuracy of Tobii Eye Tracker 5 and work with large diagonals and cursor stability in eViacam.
 
 
 
