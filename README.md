@@ -41,31 +41,7 @@ Installation:
 
 Initially, the eViacam program was developed for completely paralyzed people, and therefore the management is not designed for other scenarios.
 
-The script I wrote is a crutch for the program and extends the functionality.
-
-Moving the mouse and pressing the left mouse button:
-1. By holding CapsLock, you will enable the capture of head movements through the webcam, the movements of your head will control the cursor. 
-2. Head movements will be tracked while you keep the CapsLock pressed.
-3. Releasing the CapsLock, a "left mouse click" will be made and head tracking will stop. 
-4. Quick double click = double click on the classic mouse
-It is possible to adjust the movement of the mouse without pressing, but you either need to reserve 1 more button on the keyboard, or make a combination of buttons. See below scenario
-
-Pressing the middle mouse button:
-1. Hold CapsLock
-2. Without releasing the CapsLock, press and release the Left Shift
-3. Until you release the CapsLock, you can press several times and move the mouse (for example, to scroll text) 
-4. Press CapsLock the tracking of the head will turn off and the left mouse button will be clicked. 
-
-
-Pressing Right mouse button:
-Press Right Ctr
-
-This is a cheap implementation. Its main drawback is that on a large diagonal of the screen, you need a high sensitivity of the cursor, but with a high sensitivity of the cursor, the accuracy will drop
-
-To solve this problem, I additionally use Tobii Eye Tracker5 and its function "Move the mouse cursor to where you are looking at the click of a button". I have this RightAlt (Alt Gr) button.
-Together, they compensate for each other's shortcomings, i.e. the low accuracy of Tobii Eye Tracker 5 and work with large diagonals and cursor stability in eViacam.
-
-
+Just see in AutoHotkeyScript.ahk combination key
 
 
 
