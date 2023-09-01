@@ -1,48 +1,78 @@
-# Mouse-via-Head-Eye-Tracking
+# Disclaimer: I've uploaded a binary file to this git repository. It's generally advised against doing so, but it suits my specific needs. For safety and authenticity, I strongly recommend downloading the program directly from the developer's official website provided in the link below
+
+## Mouse-via-Head-Eye-Tracking
+
 Mouse control using head and eye tracking.
 
-I have attached binary files (.exe), if you are afraid of viruses, you can find the official sites by the names and download from there, or follow the links. In this case, I posted them here personally for myself, if an update is suddenly released and the script stops working, then I need a fully functioning assembly. 
+## Instructions for using the script on AutoHotkey
 
-There are 2 modes of operation:
-1. With tracking of eye and head movements (Approximately 350-400 dollars, webcam + Tobii Eye Tracker 5 https://gaming.tobii.com/product/eye-tracker-5 / )
-2. Tracking only the head (approximately $ 25 for the purchase of a webcam). This webcam was enough for me https://www.a4tech.com/product.aspx?id=236
+<details
 
+This script is used to reassign and combine keys on the keyboard, control the mouse and perform specific actions when they are pressed.
 
-Who can use it?
+### Disabling Keys
 
-1. People who cannot type text with their hands and use a PC (no hands, or paralyzed)
+* Permanently disable native behavior `CapsLock` key.
+* Pressing `LAlt` or `RAlt` will not display the context menu.
+* If you don't use `Tobii Eye tracker 5` you can delete `R/LAlt` limitation from .ahk file. If you have Tobii Eye Tracker then set `warp mouse cursor` to `LAlt`
 
-2. People who type a lot of text at a stationary PC and at the same time do not like to take their hand off the keyboard and reach for the mouse to correct a typo in the next paragraph. Maybe on laptops, touchpads are the norm, but for stationary PCs, with an arrangement like on a laptop, they are not released. 
+### 1. Head control
 
-Initially, I created it for myself and for my needs, so I admit:
+* Hold `CapsLock` to turn on head tracking. Release `CapsLock` to turn off head tracking. (Reserved `F11` key in `eViacam`)
 
+### 2. Mouse Key Control
 
--the script may not always work
+* `CapsLock + s` left mouse button click.
+* `CapsLock + d` right mouse button click.
+* `CapsLock + a` middle mouse button click.
 
--may not work correctly
+### 3. Alternate Arrow Control
 
-- it can hang out of the blue.
+#### a. Left hand
 
-And you will have to deal with these problems yourself.
+* `CapsLock + q`: Left.
+* `CapsLock + e`: Right.
+* `CapsLock + 2`: Up.
+* `CapsLock + w`: Down.
+* `CapsLock + 1`: Left while holding Ctrl.
+* `CapsLock + 3`: Right while holding Ctrl.
 
-Demonstration of the work https://youtu.be/hCLEpaX12ag
-At the very beginning, you may see problems with typing, especially when switching the input language.
+#### b.1 Right Hand
 
-Installation:
-1. Install eViacam. From here or from the developer's website. https://www.fosshub.com/Enable-Viacam.html
-2. Install the script execution environment, AutoHotkey_1.1.33.10_setup. https://www.autohotkey.com
-3. Add the AutoHotkey Script.ahk script to the antivirus and Windows Defender exceptions. 
-4. Launch eViacam and calibrate sensitivity and dead zones
-5. In the eViacam application, go to the webcam settings !!!and turn off the "low light compensation" and Shutter speed!!!, to increase the frame rate (it must be done at each startup, because the driver is standard from Windows and does not remember the latest values). Check the number of frames under the image from the camera, I have 30 fps at a shutter speed of 5 or 6.
-6. In the eViacam settings, disable all hotkeys except "Turn on eViacam", assign the F11 key to it (maybe it conflicts in some applications, but I haven't met any in half a year)
+* `CapsLock + j`: Left.
+* `CapsLock + l`: Right
+* `CapsLock + i`: Up
+* `CapsLock + k`: Down
+* `CapsLock + h`: Home
+* `CapsLock + n`: End
 
-7. Disable all functions that are in the profile settings (tabs: Workspace, Click)
-8. Run the AutoHotkey Script.ahk script with administrator rights 
+##### b.2 Page switching
+
+* `CapsLock + u`: PgUp
+* `CapsLock + m`: PgDn
+
+### 4. Mouse wheel
+
+* `CapsLock + r`: Scroll mouse wheel up
+* `CapsLock + f`: Scroll mouse wheel down.
+
+### 5. Qtranslate translator management
+
+* `CapsLock + x`: `Ctrl+a` and sends it to Qtranslate.
+* `CapsLock + z`: sends selected text to Qtranslate
+
+</details>
+
+## Installation
+
+1. Install `eViacam`. From here or from the developer's website. <https://www.fosshub.com/Enable-Viacam.html>
+2. This script work with `AutoHotkey_1.1.36.02` <https://www.autohotkey.com>
+3. Add the `AutoHotkey_Script.ahk` script to the antivirus and Windows Defender exceptions.
+4. Launch `eViacam` and calibrate `sensitivity` and `dead zones`
+5. In the `eViacam` application, go to the webcam settings `and turn off the "low light compensation"!!!!` and `Shutter speed`. Check the number of frames under the image from the camera, I have 30 fps at a shutter speed of 5 or 6.
+6. In the `eViacam` settings, disable all hotkeys except `Turn on eViacam`, assign the `F11` key to it (maybe it conflicts in some applications, but I haven't met any in two years)
+
+7. Disable all functions that are in the `profile settings` (tabs: `Workspace`, `Click`)
+8. Run the AutoHotkey Script.ahk script with administrator rights
 
 Initially, the eViacam program was developed for completely paralyzed people, and therefore the management is not designed for other scenarios.
-
-Just see in AutoHotkeyScript.ahk combination key
-
-
-
-
